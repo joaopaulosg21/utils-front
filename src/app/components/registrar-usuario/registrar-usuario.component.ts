@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { CreateUser } from 'src/app/types/CreateUser.interface';
 @Component({
