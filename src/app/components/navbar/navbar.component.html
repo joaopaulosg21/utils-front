@@ -1,10 +1,13 @@
 <p>
     <mat-toolbar color="primary">
       <span>App Utils</span>
-        <div *ngIf="(token$ | async) as token;else semtoken" class="spacer"> 
-          <div>
-            <button mat-button routerLink="/"> Adicionar Lista de compras </button>
-            <button mat-button routerLink="/"> Ver todas </button>
+        <div *ngIf="(token$ | async) as token;else semtoken" class="spacer">
+            <div class="menu-items">
+            <button mat-button [matMenuTriggerFor]="menu">Lista de compras</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/"> Adicionar</button>
+                    <button mat-menu-item routerLink="/"> Ver todas </button>
+                </mat-menu>
           </div>
           <button mat-button (click)="logout()"> Logout </button>
         </div>
