@@ -1,7 +1,16 @@
 <p>
     <mat-toolbar color="primary">
-        <span>App Utils</span>
+      <span>App Utils</span>
+        <div *ngIf="(token$ | async) as token;else semtoken" class="spacer"> 
+          <div>
+            <button mat-button routerLink="/"> Adicionar Lista de compras </button>
+            <button mat-button routerLink="/"> Ver todas </button>
+          </div>
+          <button mat-button (click)="logout()"> Logout </button>
+        </div>
+      <ng-template #semtoken>
         <button mat-button routerLink="/conta/registro"> Criar conta</button>
         <button mat-button routerLink="/conta/login"> Login</button>
-    </mat-toolbar>
-</p>
+      </ng-template>
+    </mat-toolbar> 
+  </p>
