@@ -1,0 +1,46 @@
+<div class="demo-button-container">
+    <div>
+        <mat-form-field>
+            <mat-label>Nome da Lista</mat-label>
+            <input matInput #name placeholder="Arroz">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Nome do produto</mat-label>
+            <input matInput #productName placeholder="Arroz">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Quantidade</mat-label>
+            <input matInput #quantity placeholder="1 kg">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="addItem({'name':productName.value,'quantity':quantity.value})" class="demo-button">
+        Adicionar
+    </button>
+    <button mat-raised-button (click)="removeItem()" [disabled]="!dataSource.length" class="demo-button">
+        Remover
+    </button>
+    <button mat-raised-button (click)="saveList(name.value)" [disabled]="!dataSource.length" class="demo-button">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="changeIsPublic()" [disabled]="!dataSource.length" class="demo-button">
+        Lista publica? {{isPublic}}
+    </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantity</th>
+        <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -23,6 +23,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
 import { HttpErrorInterceptor } from "./core/http-error.interceptor";
+import { RegistrarListaComponent } from './components/registrar-lista/registrar-lista.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HttpErrorInterceptor } from "./core/http-error.interceptor";
     RegistrarUsuarioComponent,
     LoginUsuarioComponent,
     MainPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrarListaComponent
   ],
   imports: [
     BrowserModule,
