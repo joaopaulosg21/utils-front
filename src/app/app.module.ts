@@ -24,6 +24,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
 import { HttpErrorInterceptor } from "./core/http-error.interceptor";
 import { RegistrarListaComponent } from './components/registrar-lista/registrar-lista.component';
+import { ListasPublicasComponent } from './components/listas-publicas/listas-publicas.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { RegistrarListaComponent } from './components/registrar-lista/registrar-
     LoginUsuarioComponent,
     MainPageComponent,
     NavbarComponent,
-    RegistrarListaComponent
+    RegistrarListaComponent,
+    ListasPublicasComponent
   ],
   imports: [
     BrowserModule,
@@ -51,16 +54,17 @@ import { RegistrarListaComponent } from './components/registrar-lista/registrar-
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
   ],
   providers: [
     {
-      provide:HTTP_INTERCEPTORS,
-      useClass:HttpErrorInterceptor,
-      multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
     },
     {
-      provide: MAT_DATE_LOCALE,useValue: 'pt-br'
+      provide: MAT_DATE_LOCALE, useValue: 'pt-br'
     }
   ],
   bootstrap: [AppComponent]

@@ -39,11 +39,9 @@ export class RegistrarListaComponent {
       items:this.dataSource,
       public:this.isPublic
     }
-    console.log(data);
     this.userService.getToken().subscribe((token:any) => {
         this.listService.createList(data,token).subscribe((data:any) => {
           this.snackBar.open("Lista " + data.name + " adicionada","",{duration:2000});
-          console.log(data);
         });
     });
   }

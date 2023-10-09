@@ -6,6 +6,7 @@
         <button mat-button [matMenuTriggerFor]="menu">Lista de compras</button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item routerLink="/lista/registro"> Adicionar</button>
+          <button mat-menu-item routerLink="/lista/buscar/publicas">Ver todas (publicas) </button>
           <button mat-menu-item routerLink="/"> Ver todas </button>
         </mat-menu>
       </div>
@@ -14,6 +15,12 @@
     <ng-template #semtoken>
       <button mat-button routerLink="/conta/registro"> Criar conta</button>
       <button mat-button routerLink="/conta/login"> Login</button>
+      <div class="menu-items">
+        <button mat-button [matMenuTriggerFor]="menu">Lista de compras</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/lista/buscar/publicas">Ver todas (publicas) </button>
+        </mat-menu>
+      </div>
     </ng-template>
   </mat-toolbar>
 </p>

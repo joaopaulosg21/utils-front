@@ -13,7 +13,6 @@ export class LoginUsuarioComponent {
 
   login(login:Login) {
     return this.userService.login(login).subscribe((data:any) => {
-      console.log(data.token);
       this.userService.setToken(data.token);
       this.snackBar.open("Login bem sucedido","",{duration:2000});
     });

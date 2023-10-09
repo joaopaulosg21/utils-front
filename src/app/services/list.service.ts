@@ -14,5 +14,9 @@ export class ListService {
   createList(list:CreateList, token:string) {
     const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.post(this.api + "/api/list/",list,{headers:header});
-  } 
+  }
+
+  findAllPublic() {
+    return this.http.get(this.api + "/api/list/find/public");
+  }
 }
