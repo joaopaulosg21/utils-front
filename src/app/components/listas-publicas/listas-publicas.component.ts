@@ -33,4 +33,8 @@ export class ListasPublicasComponent implements OnInit{
     const lista:List = this.lists.filter(item => item.id == id)[0];
     this.dataSource = lista.items;
   }
+
+  change(name:string) {
+    this.dataSource.filter(item => item.name === name).map(item => item.status = !item.status)
+  }
 }

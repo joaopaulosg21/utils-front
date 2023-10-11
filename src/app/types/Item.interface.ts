@@ -1,4 +1,5 @@
 export interface Item {
     name:string,
-    quantity:string;
+    quantity:string,
+    status?:boolean;
 }
