@@ -1,4 +1,4 @@
-<div class="demo-button-container">
+<div class="button-container">
     <div>
         <mat-form-field>
             <mat-label>Nome da Lista</mat-label>
@@ -15,21 +15,21 @@
             <input matInput #quantity placeholder="1 kg">
         </mat-form-field>
     </div>
-    <button mat-raised-button (click)="addItem({'name':productName.value,'quantity':quantity.value})" class="demo-button">
+    <button mat-raised-button (click)="addItem({'name':productName.value,'quantity':quantity.value})" class="button">
         Adicionar
     </button>
-    <button mat-raised-button (click)="removeItem()" [disabled]="!dataSource.length" class="demo-button">
+    <button mat-raised-button (click)="removeItem()" [disabled]="!dataSource.length" class="button">
         Remover
     </button>
-    <button mat-raised-button (click)="saveList(name.value)" [disabled]="!dataSource.length" class="demo-button">
+    <button mat-raised-button (click)="saveList(name.value)" [disabled]="!dataSource.length" class="button">
         Salvar
     </button>
-    <button mat-raised-button (click)="changeIsPublic()" [disabled]="!dataSource.length" class="demo-button">
+    <button mat-raised-button (click)="changeIsPublic()" [disabled]="!dataSource.length" class="button">
         Lista publica? {{isPublic}}
     </button>
 </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
 
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>

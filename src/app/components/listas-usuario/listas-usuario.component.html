@@ -7,6 +7,9 @@
             <mat-panel-description>
             </mat-panel-description>
         </mat-expansion-panel-header>
+        <button mat-raised-button class="button" (click)="deleteTable(item.id)">
+            Deletar tabela
+        </button>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
 
             <ng-container matColumnDef="name">

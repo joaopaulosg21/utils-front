@@ -24,4 +24,9 @@ export class ListService {
     const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.get(this.api + "/api/list/find/all",{headers:header});
   }
+
+  deleteById(tableId:string, token:string) {
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.delete(this.api + "/api/list/delete/" + tableId,{headers:header});
+  }
 }

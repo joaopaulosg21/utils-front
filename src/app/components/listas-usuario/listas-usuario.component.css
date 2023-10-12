@@ -5,3 +5,7 @@
 td {
     cursor: pointer;
 }
+
+.button {
+    margin-bottom: 10px;
+}
