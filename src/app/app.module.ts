@@ -26,6 +26,7 @@ import { HttpErrorInterceptor } from "./core/http-error.interceptor";
 import { RegistrarListaComponent } from './components/registrar-lista/registrar-lista.component';
 import { ListasPublicasComponent } from './components/listas-publicas/listas-publicas.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ListasUsuarioComponent } from './components/listas-usuario/listas-usuario.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MainPageComponent,
     NavbarComponent,
     RegistrarListaComponent,
-    ListasPublicasComponent
+    ListasPublicasComponent,
+    ListasUsuarioComponent
   ],
   imports: [
     BrowserModule,
