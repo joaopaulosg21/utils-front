@@ -3,11 +3,17 @@
     <span>App Utils</span>
     <div *ngIf="(token$ | async) as token;else semtoken" class="spacer">
       <div class="menu-items">
-        <button mat-button [matMenuTriggerFor]="menu">Lista de compras</button>
-        <mat-menu #menu="matMenu">
+        <button mat-button [matMenuTriggerFor]="lista">Lista de compras</button>
+        <mat-menu #lista="matMenu">
           <button mat-menu-item routerLink="/lista/registro"> Adicionar</button>
           <button mat-menu-item routerLink="/lista/buscar/publicas">Ver todas (publicas) </button>
           <button mat-menu-item routerLink="/lista/todas"> Ver todas </button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="tarefa">Tarefas diarias</button>
+        <mat-menu #tarefa="matMenu">
+          <button mat-menu-item routerLink="/tarefa/registro"> Adicionar</button>
+          <button mat-menu-item routerLink=""> Ver todas </button>
         </mat-menu>
       </div>
       <button mat-button (click)="logout()"> Logout </button>

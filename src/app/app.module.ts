@@ -27,6 +27,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrarUsuarioComponent } from './components/usuarios/registrar-usuario/registrar-usuario.component';
 import { HttpErrorInterceptor } from "./core/http-error.interceptor";
+import { RegistrarTarefaComponent } from './components/tarefas/registrar-tarefa/registrar-tarefa.component';
+import { TarefasUsuarioComponent } from './components/tarefas/tarefas-usuario/tarefas-usuario.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { HttpErrorInterceptor } from "./core/http-error.interceptor";
     NavbarComponent,
     RegistrarListaComponent,
     ListasPublicasComponent,
-    ListasUsuarioComponent
+    ListasUsuarioComponent,
+    RegistrarTarefaComponent,
+    TarefasUsuarioComponent
   ],
   imports: [
     BrowserModule,
