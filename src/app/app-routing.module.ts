@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegistrarUsuarioComponent } from './components/registrar-usuario/registrar-usuario.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
-import { LoginUsuarioComponent } from './components/login-usuario/login-usuario.component';
-import { RegistrarListaComponent } from './components/registrar-lista/registrar-lista.component';
-import { ListasPublicasComponent } from './components/listas-publicas/listas-publicas.component';
-import { ListasUsuarioComponent } from './components/listas-usuario/listas-usuario.component';
+import { RegistrarUsuarioComponent } from './components/usuarios/registrar-usuario/registrar-usuario.component';
+import { LoginUsuarioComponent } from './components/usuarios/login-usuario/login-usuario.component';
+import { RegistrarListaComponent } from './components/listas/registrar-lista/registrar-lista.component';
+import { ListasPublicasComponent } from './components/listas/listas-publicas/listas-publicas.component';
+import { ListasUsuarioComponent } from './components/listas/listas-usuario/listas-usuario.component';
 
 const routes: Routes = [
   {path:"",component:MainPageComponent},
