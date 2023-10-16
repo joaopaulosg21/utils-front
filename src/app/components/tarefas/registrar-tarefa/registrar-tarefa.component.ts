@@ -20,7 +20,7 @@ export class RegistrarTarefaComponent {
       everyDay: JSON.parse(everyDay),
       time: this.formatDate(picker, time)
     };
-    console.log(task);
+    
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.createTask(task, token).subscribe((data: any) => {
         this.snackBar.open("Tarefa " + description + " adicionada com sucesso", "", { duration: 2000 });

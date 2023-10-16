@@ -15,4 +15,14 @@ export class TasksService {
     const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.post(this.api + "/api/tasks/",task,{headers:header});
   }
+
+  findAll(token:string) {
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get(this.api + "/api/tasks/find/all",{headers:header});
+  }
+
+  complete(id:string,token:string) {
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.patch(this.api + "/api/tasks/complete/"+id,"",{headers:header});
+  }
 }

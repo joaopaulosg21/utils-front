@@ -1,10 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TasksService } from 'src/app/services/tasks.service';
+import { UserService } from 'src/app/services/user.service';
+import { Task } from 'src/app/types/Task.interface';
 
 @Component({
   selector: 'app-tarefas-usuario',
   templateUrl: './tarefas-usuario.component.html',
   styleUrls: ['./tarefas-usuario.component.css']
 })
-export class TarefasUsuarioComponent {
+export class TarefasUsuarioComponent implements OnInit{
+  constructor(private taskService: TasksService, private userService: UserService,
+    private snackBar:MatSnackBar) {}
 
+  ngOnInit(): void {
+      this.findAll();
+  }
+  
+  allTasks:Task[] = [];
+
+  findAll() {
+    this.userService.getToken().subscribe((token:any) => {
+      this.taskService.findAll(token).subscribe((data:any) => {
+        console.log(data);
+        this.allTasks = data;
+      });
+    });
+  }
+
+  complete(id:string) {
+    this.userService.getToken().subscribe((token:any) => {
+      this.taskService.complete(id,token).subscribe((data:any) => {
+        console.log(data);
+        this.snackBar.open("Task concluida com sucesso!","",{duration:2000});
+        this.ngOnInit();
+      });
+    });
+  }
 }
