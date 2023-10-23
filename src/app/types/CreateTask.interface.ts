@@ -1,5 +1,6 @@
 export interface CreateTask {
     description:string,
     time:string,
-    everyDay:boolean;
+    everyDay:boolean,
+    end_date:string;
 }

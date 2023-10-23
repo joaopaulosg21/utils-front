@@ -29,6 +29,7 @@ import { RegistrarUsuarioComponent } from './components/usuarios/registrar-usuar
 import { HttpErrorInterceptor } from "./core/http-error.interceptor";
 import { RegistrarTarefaComponent } from './components/tarefas/registrar-tarefa/registrar-tarefa.component';
 import { TarefasUsuarioComponent } from './components/tarefas/tarefas-usuario/tarefas-usuario.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,9 @@ import { TarefasUsuarioComponent } from './components/tarefas/tarefas-usuario/ta
     MatNativeDateModule,
     MatDialogModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

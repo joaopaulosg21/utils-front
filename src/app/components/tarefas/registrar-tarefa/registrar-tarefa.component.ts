@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TasksService } from 'src/app/services/tasks.service';
 import { UserService } from 'src/app/services/user.service';
@@ -14,11 +15,12 @@ export class RegistrarTarefaComponent {
   constructor(private taskService: TasksService, private userService: UserService,
     private snackBar: MatSnackBar) { }
 
-  createTask(description: string, picker: any, time: string, everyDay: string) {
+  createTask(description: string,range:any, time: string) {
     const task: CreateTask = {
       description: description,
-      everyDay: JSON.parse(everyDay),
-      time: this.formatDate(picker, time)
+      everyDay: true,
+      time: this.formatDate(range.start, time),
+      end_date:this.formatDate(range.end,time)
     };
     
     this.userService.getToken().subscribe((token: any) => {
@@ -28,9 +30,14 @@ export class RegistrarTarefaComponent {
     });
   }
 
-  formatDate(picker: any, time: string): string {
-    const fullDate: Date = picker._model.selection;
+  formatDate(range: any, time: string): string {
+    const fullDate: Date = range;
 
     return fullDate.toLocaleString().replaceAll("00:00:00", time + ":00").replace(",", "");
   }
+
+  range = new FormGroup({
+    start: new FormControl<Date | null>(null),
+    end: new FormControl<Date | null>(null),
+  });
 }
