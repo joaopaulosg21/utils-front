@@ -1,7 +1,7 @@
 <mat-accordion *ngFor="let item of lists">
     <mat-expansion-panel hideToggle (click)="viewList(item.id)">
         <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title class="list-name">
                 {{item.name}}
             </mat-panel-title>
             <mat-panel-description>

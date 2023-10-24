@@ -5,3 +5,9 @@
 td {
     cursor: pointer;
 }
+
+@media(max-width: 400px) {
+    .list-name {
+        font-size: 0.6rem;
+    }
+}
