@@ -30,6 +30,9 @@ import { HttpErrorInterceptor } from "./core/http-error.interceptor";
 import { RegistrarTarefaComponent } from './components/tarefas/registrar-tarefa/registrar-tarefa.component';
 import { TarefasUsuarioComponent } from './components/tarefas/tarefas-usuario/tarefas-usuario.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -65,6 +68,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     MatExpansionModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [
     {

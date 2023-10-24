@@ -8,3 +8,16 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.menu-filters {
+    margin-left: 2rem;
+    display: flex;
+}
+
+.search-form {
+    margin-right: 2rem;
+}
+
+.form-icon {
+    cursor: pointer;
+}

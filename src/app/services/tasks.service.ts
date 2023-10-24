@@ -25,4 +25,9 @@ export class TasksService {
     const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.patch(this.api + "/api/tasks/complete/"+id,"",{headers:header});
   }
+
+  findByDate(token:string, find:any) {
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get(this.api + "/api/tasks/find?date="+find.time,{headers:header});
+  }
 }

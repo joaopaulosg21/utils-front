@@ -37,4 +37,16 @@ export class TarefasUsuarioComponent implements OnInit{
       });
     });
   }
+
+  findByDate(picker:any) {
+    const date: Date = picker._model.selection;
+    const find = {
+      time:date.toLocaleString().split(",")[0].replaceAll("/","-")
+    };
+    this.userService.getToken().subscribe((token:any) => {
+      this.taskService.findByDate(token,find).subscribe((data:any) => {
+        this.allTasks = data;
+      })
+    });
+  }
 }
