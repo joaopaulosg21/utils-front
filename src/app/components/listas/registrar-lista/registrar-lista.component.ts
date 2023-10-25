@@ -37,7 +37,7 @@ export class RegistrarListaComponent {
     const data:CreateList = {
       name:listName,
       items:this.dataSource,
-      isPublic:this.isPublic
+      isPublic:true
     }
     this.userService.getToken().subscribe((token:any) => {
         this.listService.createList(data,token).subscribe((data:any) => {

@@ -24,9 +24,6 @@
     <button mat-raised-button (click)="saveList(name.value)" [disabled]="!dataSource.length" class="button">
         Salvar
     </button>
-    <button mat-raised-button (click)="changeIsPublic()" [disabled]="!dataSource.length" class="button">
-        Lista publica? {{isPublic}}
-    </button>
 </div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
