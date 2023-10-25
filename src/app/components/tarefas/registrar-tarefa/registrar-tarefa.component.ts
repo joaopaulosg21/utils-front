@@ -15,12 +15,12 @@ export class RegistrarTarefaComponent {
   constructor(private taskService: TasksService, private userService: UserService,
     private snackBar: MatSnackBar) { }
 
-  createTask(description: string,range:any, time: string) {
+  createTask(description: string,range:any, time: any) {
     const task: CreateTask = {
       description: description,
       everyDay: true,
-      time: this.formatDate(range.start, time),
-      end_date:this.formatDate(range.end,time)
+      time: this.formatDate(range.start, time.value),
+      end_date:this.formatDate(range.end,time.value)
     };
     
     this.userService.getToken().subscribe((token: any) => {
@@ -33,7 +33,7 @@ export class RegistrarTarefaComponent {
   formatDate(range: any, time: string): string {
     const fullDate: Date = range;
 
-    return fullDate.toLocaleString().replaceAll("00:00:00", time + ":00").replace(",", "");
+    return fullDate.toLocaleString("pt-br").replaceAll("00:00:00", time + ":00").replace(",", "");
   }
 
   range = new FormGroup({

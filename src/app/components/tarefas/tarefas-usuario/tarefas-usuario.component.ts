@@ -23,6 +23,11 @@ export class TarefasUsuarioComponent implements OnInit {
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.findAll(token).subscribe((data: any) => {
         this.allTasks = data;
+        this.allTasks.sort((a,b) => {
+         const value = Number(a.time.split("/")[0]) + Number(a.time.split("/")[1]);
+         const value2 = Number(b.time.split("/")[0]) + Number(b.time.split("/")[1]);
+         return value - value2;
+        });
       });
     });
   }
@@ -44,6 +49,11 @@ export class TarefasUsuarioComponent implements OnInit {
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.findByDate(token, find).subscribe((data: any) => {
         this.allTasks = data;
+        this.allTasks.sort((a,b) => {
+          const value = Number(a.time.split("/")[0]) + Number(a.time.split("/")[1]);
+          const value2 = Number(b.time.split("/")[0]) + Number(b.time.split("/")[1]);
+          return value - value2;
+         });
       })
     });
   }
@@ -54,6 +64,11 @@ export class TarefasUsuarioComponent implements OnInit {
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.findByDescription(token, description).subscribe((data: any) => {
         this.allTasks = data;
+        this.allTasks.sort((a,b) => {
+          const value = Number(a.time.split("/")[0]) + Number(a.time.split("/")[1]);
+          const value2 = Number(b.time.split("/")[0]) + Number(b.time.split("/")[1]);
+          return value - value2;
+         });
       })
     });
   }
