@@ -8,6 +8,7 @@ import { ListasPublicasComponent } from './components/listas/listas-publicas/lis
 import { ListasUsuarioComponent } from './components/listas/listas-usuario/listas-usuario.component';
 import { RegistrarTarefaComponent } from './components/tarefas/registrar-tarefa/registrar-tarefa.component';
 import { TarefasUsuarioComponent } from './components/tarefas/tarefas-usuario/tarefas-usuario.component';
+import { TarefasDoDiaComponent } from './components/tarefas/tarefas-do-dia/tarefas-do-dia.component';
 
 const routes: Routes = [
   {path:"",component:MainPageComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:"lista/buscar/publicas",component:ListasPublicasComponent},
   {path:"lista/todas",component:ListasUsuarioComponent},
   {path:"tarefa/registro",component:RegistrarTarefaComponent},
-  {path:"tarefa/todas",component:TarefasUsuarioComponent}
+  {path:"tarefa/todas",component:TarefasUsuarioComponent},
+  {path:"tarefa/dia",component:TarefasDoDiaComponent}
 ];
 
 @NgModule({

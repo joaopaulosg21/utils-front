@@ -7,11 +7,13 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .menu-filters {
     margin-left: 2rem;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .search-form {
@@ -20,4 +22,13 @@
 
 .form-icon {
     cursor: pointer;
+}
+
+@media(max-width: 450px) {
+    .menu-filters {
+        margin-left: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

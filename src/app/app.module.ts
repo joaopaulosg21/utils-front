@@ -33,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { TarefasDoDiaComponent } from './components/tarefas/tarefas-do-dia/tarefas-do-dia.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatListModule } from '@angular/material/list';
     ListasPublicasComponent,
     ListasUsuarioComponent,
     RegistrarTarefaComponent,
-    TarefasUsuarioComponent
+    TarefasUsuarioComponent,
+    TarefasDoDiaComponent
   ],
   imports: [
     BrowserModule,
