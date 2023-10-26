@@ -13,8 +13,8 @@ import { List } from 'src/app/types/List.interface';
 })
 export class ListasUsuarioComponent implements OnInit {
   @ViewChild(MatTable) table!: MatTable<Item>;
-  constructor(private listService: ListService, private userService:UserService,
-    private matSnackBar:MatSnackBar) { }
+  constructor(private listService: ListService, private userService: UserService,
+    private matSnackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -23,8 +23,8 @@ export class ListasUsuarioComponent implements OnInit {
   lists!: List[];
 
   findAll() {
-    this.userService.getToken().subscribe((token:any) => {
-      this.listService.findAllUser(token).subscribe((data:any) => {
+    this.userService.getToken().subscribe((token: any) => {
+      this.listService.findAllUser(token).subscribe((data: any) => {
         this.lists = data;
       })
     });
@@ -43,12 +43,12 @@ export class ListasUsuarioComponent implements OnInit {
     this.dataSource.filter(item => item.name === name).map(item => item.status = !item.status);
   }
 
-  deleteTable(tableId:string) {
+  deleteTable(tableId: string) {
     const value = window.confirm();
-    if(value) {
-      this.userService.getToken().subscribe((token:any) => {
-        this.listService.deleteById(tableId,token).subscribe((data:any) => {
-          this.matSnackBar.open("Lista deletada com sucesso","",{duration:2000});
+    if (value) {
+      this.userService.getToken().subscribe((token: any) => {
+        this.listService.deleteById(tableId, token).subscribe((data: any) => {
+          this.matSnackBar.open("Lista deletada com sucesso", "", { duration: 2000, verticalPosition: 'top' });
           this.ngOnInit();
         });
       });

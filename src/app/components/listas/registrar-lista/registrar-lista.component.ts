@@ -13,16 +13,16 @@ import { Item } from 'src/app/types/Item.interface';
 })
 export class RegistrarListaComponent {
   @ViewChild(MatTable) table!: MatTable<Item>;
-  constructor(private listService:ListService, private userService:UserService,
-    private snackBar:MatSnackBar){}
+  constructor(private listService: ListService, private userService: UserService,
+    private snackBar: MatSnackBar) { }
 
-  displayedColumns:string[] = ["name","quantity"];
+  displayedColumns: string[] = ["name", "quantity"];
 
-  dataSource:Item[] = [];
+  dataSource: Item[] = [];
 
-  isPublic:boolean = false;
+  isPublic: boolean = false;
 
-  addItem(item:Item) {
+  addItem(item: Item) {
     this.dataSource.push(item);
     this.table.renderRows();
     console.log(this.dataSource)
@@ -33,16 +33,16 @@ export class RegistrarListaComponent {
     this.table.renderRows();
   }
 
-  saveList(listName:string) {
-    const data:CreateList = {
-      name:listName,
-      items:this.dataSource,
-      isPublic:true
+  saveList(listName: string) {
+    const data: CreateList = {
+      name: listName,
+      items: this.dataSource,
+      isPublic: true
     }
-    this.userService.getToken().subscribe((token:any) => {
-        this.listService.createList(data,token).subscribe((data:any) => {
-          this.snackBar.open("Lista " + data.name + " adicionada","",{duration:2000});
-        });
+    this.userService.getToken().subscribe((token: any) => {
+      this.listService.createList(data, token).subscribe((data: any) => {
+        this.snackBar.open("Lista " + data.name + " adicionada", "", { duration: 2000, verticalPosition: 'top' });
+      });
     });
   }
 

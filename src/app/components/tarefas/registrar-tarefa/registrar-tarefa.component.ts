@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TasksService } from 'src/app/services/tasks.service';
 import { UserService } from 'src/app/services/user.service';
@@ -15,17 +15,17 @@ export class RegistrarTarefaComponent {
   constructor(private taskService: TasksService, private userService: UserService,
     private snackBar: MatSnackBar) { }
 
-  createTask(description: string,range:any, time: any) {
+  createTask(description: string, range: any, time: any) {
     const task: CreateTask = {
       description: description,
       everyDay: true,
       time: this.formatDate(range.start, time.value),
-      end_date:this.formatDate(range.end,time.value)
+      end_date: this.formatDate(range.end, time.value)
     };
-    
+
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.createTask(task, token).subscribe((data: any) => {
-        this.snackBar.open("Tarefa " + description + " adicionada com sucesso", "", { duration: 2000 });
+        this.snackBar.open("Tarefa " + description + " adicionada com sucesso", "", { duration: 2000, verticalPosition: 'top' });
       });
     });
   }

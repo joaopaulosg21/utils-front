@@ -9,12 +9,12 @@ import { CreateUser } from 'src/app/types/CreateUser.interface';
   styleUrls: ['./registrar-usuario.component.css']
 })
 export class RegistrarUsuarioComponent {
-  constructor(private userService:UserService, private snackBar:MatSnackBar,
-    private router:Router) {}
+  constructor(private userService: UserService, private snackBar: MatSnackBar,
+    private router: Router) { }
 
-  create(user:CreateUser) {
+  create(user: CreateUser) {
     this.userService.createUser(user).subscribe(data => {
-      this.snackBar.open("Sua conta foi registrada com sucesso","",{duration:2000});
+      this.snackBar.open("Sua conta foi registrada com sucesso", "", { duration: 2000, verticalPosition: 'top' });
       this.router.navigateByUrl("/conta/login");
     });
   }

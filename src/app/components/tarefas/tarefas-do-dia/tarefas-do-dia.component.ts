@@ -23,14 +23,14 @@ export class TarefasDoDiaComponent implements OnInit {
   complete(id: string) {
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.complete(id, token).subscribe((data: any) => {
-        this.snackBar.open("Task concluida com sucesso!", "", { duration: 2000 });
+        this.snackBar.open("Task concluida com sucesso!", "", { duration: 2000, verticalPosition: 'top' });
         this.ngOnInit();
       });
     });
   }
 
   todayTasks() {
-    const date = new Date(Date.now()).toLocaleString("pt-br").split(",")[0].replaceAll("/","-");
+    const date = new Date(Date.now()).toLocaleString("pt-br").split(",")[0].replaceAll("/", "-");
     const find = {
       time: date
     }
