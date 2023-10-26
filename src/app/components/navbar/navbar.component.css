@@ -8,8 +8,12 @@
     margin-left: 15px;
 }
 
-@media(max-width: 400px) {
-    span {
-        display: none;
+@media(max-width: 450px) {
+    .spacer {
+        max-width: 100%;
+    }
+
+    .menu-items {
+        margin-left: 0px;
     }
 }
