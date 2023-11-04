@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
+import { RegistrarNotaComponent } from '../notas/registrar-nota/registrar-nota.component';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
-  constructor(private userService:UserService, private router:Router){}
+  constructor(private userService:UserService, private router:Router, private dialog:MatDialog){}
 
   token$!:Observable<string | null>;
   
@@ -20,5 +22,9 @@ export class NavbarComponent implements OnInit{
   logout() {
     this.userService.setToken(null);
     this.router.navigateByUrl("/conta/login");
+  }
+
+  openDialog() {
+    this.dialog.open(RegistrarNotaComponent);
   }
 }

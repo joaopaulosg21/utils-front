@@ -15,6 +15,12 @@
           <button mat-menu-item routerLink="/tarefa/todas"> Ver todas </button>
           <button mat-menu-item routerLink="/tarefa/dia"> Tarefas do dia </button>
         </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="nota">Notas</button>
+        <mat-menu #nota="matMenu">
+          <button mat-menu-item (click)="openDialog()"> Adicionar</button>
+          <button mat-menu-item routerLink=""> Ver todas </button>
+        </mat-menu>
       </div>
       <button mat-button (click)="logout()"> Logout </button>
     </div>
