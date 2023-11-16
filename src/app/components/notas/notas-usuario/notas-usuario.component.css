@@ -1,0 +1,16 @@
+.note-card {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 15px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list {
+    max-width: 600px;
+    max-height: 600px;
+}
