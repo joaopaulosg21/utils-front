@@ -16,12 +16,28 @@ export class RegistrarTarefaComponent {
     private snackBar: MatSnackBar) { }
 
   createTask(description: string, range: any, time: any) {
-    const task: CreateTask = {
-      description: description,
-      everyDay: true,
-      time: this.formatDate(range.start, time.value),
-      end_date: this.formatDate(range.end, time.value)
-    };
+    let task: CreateTask | null = null;
+
+    if (range.end == null) {
+      task = {
+        description: description,
+        everyDay: true,
+        time: this.formatDate(range.start, time.value),
+        end_date: this.formatDate(range.start, time.value)
+      };
+    } else {
+      task = {
+        description: description,
+        everyDay: true,
+        time: this.formatDate(range.start, time.value),
+        end_date: this.formatDate(range.end, time.value)
+      };
+    }
+
+
+    if (task.end_date == null) {
+      task.end_date = this.formatDate(range.start, time.value);
+    }
 
     this.userService.getToken().subscribe((token: any) => {
       this.taskService.createTask(task, token).subscribe((data: any) => {

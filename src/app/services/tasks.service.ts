@@ -11,7 +11,7 @@ export class TasksService {
   constructor(private http:HttpClient) { }
   private api:string = environment.api;
   
-  createTask(task:CreateTask,token:string) {
+  createTask(task:CreateTask | null,token:string) {
     const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.post(this.api + "/api/tasks/",task,{headers:header});
   }
