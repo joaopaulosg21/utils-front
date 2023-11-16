@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { RegistrarNotaComponent } from '../notas/registrar-nota/registrar-nota.component';
+import { NotasUsuarioComponent } from '../notas/notas-usuario/notas-usuario.component';
 
 @Component({
   selector: 'app-navbar',
@@ -24,7 +25,11 @@ export class NavbarComponent implements OnInit{
     this.router.navigateByUrl("/conta/login");
   }
 
-  openDialog() {
+  registerNoteDialog() {
     this.dialog.open(RegistrarNotaComponent);
+  }
+
+  findAllNoteDialog() {
+    this.dialog.open(NotasUsuarioComponent);
   }
 }

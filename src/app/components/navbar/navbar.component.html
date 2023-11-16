@@ -18,8 +18,8 @@
 
         <button mat-button [matMenuTriggerFor]="nota">Notas</button>
         <mat-menu #nota="matMenu">
-          <button mat-menu-item (click)="openDialog()"> Adicionar</button>
-          <button mat-menu-item routerLink=""> Ver todas </button>
+          <button mat-menu-item (click)="registerNoteDialog()"> Adicionar</button>
+          <button mat-menu-item (click)="findAllNoteDialog()"> Ver todas </button>
         </mat-menu>
       </div>
       <button mat-button (click)="logout()"> Logout </button>

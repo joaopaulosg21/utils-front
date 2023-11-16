@@ -35,6 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { TarefasDoDiaComponent } from './components/tarefas/tarefas-do-dia/tarefas-do-dia.component';
 import { RegistrarNotaComponent } from './components/notas/registrar-nota/registrar-nota.component';
+import { NotasUsuarioComponent } from './components/notas/notas-usuario/notas-usuario.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { RegistrarNotaComponent } from './components/notas/registrar-nota/regist
     RegistrarTarefaComponent,
     TarefasUsuarioComponent,
     TarefasDoDiaComponent,
-    RegistrarNotaComponent
+    RegistrarNotaComponent,
+    NotasUsuarioComponent
   ],
   imports: [
     BrowserModule,

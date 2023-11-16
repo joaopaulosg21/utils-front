@@ -15,5 +15,8 @@ export class NotesService {
     return this.http.post(this.api + "/api/notes/",data,{headers:header});
   }
 
-
+  findAll(token:string) {
+    const header = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get(this.api + "/api/notes/",{headers:header});
+  }
 }

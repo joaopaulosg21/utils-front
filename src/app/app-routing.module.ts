@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:"lista/todas",component:ListasUsuarioComponent},
   {path:"tarefa/registro",component:RegistrarTarefaComponent},
   {path:"tarefa/todas",component:TarefasUsuarioComponent},
-  {path:"tarefa/dia",component:TarefasDoDiaComponent}
+  {path:"tarefa/dia",component:TarefasDoDiaComponent},
 ];
 
 @NgModule({

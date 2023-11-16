@@ -1,3 +1,3 @@
 export const environment = {
-    api: "https://utils-test-deploy.onrender.com"
+    api: "http://localhost:8080"
 }
