@@ -20,7 +20,6 @@ export class NotasUsuarioComponent implements OnInit{
   findAll() {
     this.userService.getToken().subscribe((token:any) => {
       this.notesService.findAll(token).subscribe((data:any) => {
-        console.log(data);
         this.notes = data;
       });
     });
