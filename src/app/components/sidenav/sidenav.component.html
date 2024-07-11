@@ -1,0 +1,13 @@
+<app-navbar (showSideEvent)="showSide($event)"></app-navbar>
+
+@if(showSideEvent) {
+<div class="side-div">
+  <button mat-button [matMenuTriggerFor]="afterMenu"> Lista de compras</button>
+</div>
+
+
+<mat-menu #afterMenu="matMenu" xPosition="before">
+  <button mat-menu-item>Registrar</button>
+  <button mat-menu-item>Ver todas</button>
+</mat-menu>
+}

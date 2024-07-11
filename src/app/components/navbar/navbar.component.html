@@ -1,0 +1,18 @@
+<mat-toolbar>
+    @if(token$ | async; as token) {
+        <button mat-icon-button (click)="showSide()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Utils App</span>
+        <span class="spacer"></span>
+        <button mat-icon-button class="login-icon" (click)="openLogoutDialog()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    } @else {
+        <span>Utils App</span>
+        <span class="spacer"></span>
+        <button mat-icon-button class="login-icon" (click)="openLoginDialog()">
+            <mat-icon>login</mat-icon>
+        </button>
+    }
+</mat-toolbar>
