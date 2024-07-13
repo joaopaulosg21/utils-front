@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #191c1c;
+    height: 95%;
+}
+
+.mat-select {
+    margin-top: 30px;
+    height: 12%;
+}
+
+.list-container {
+    width: 400px;
+}

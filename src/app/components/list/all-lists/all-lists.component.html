@@ -1,0 +1,22 @@
+<div class="container">
+    <mat-form-field class="mat-select">
+        <mat-label>Escolha uma Lista</mat-label>
+        <mat-select [formControl]="listControl" required>
+            <mat-option>--</mat-option>
+            @for (list of lists; track list.id) {
+            <mat-option [value]="list">{{list.name}}</mat-option>
+            }
+        </mat-select>
+        @if (listControl.hasError('required')) {
+        <mat-error>Por favor escolha uma lista</mat-error>
+        }
+
+    </mat-form-field>
+    <mat-hint>
+        <mat-selection-list class="list-container">
+            @for (item of listControl.value?.items; track item.name) {
+            <mat-list-option>{{item.name}}</mat-list-option>
+            }
+        </mat-selection-list>
+    </mat-hint>
+</div>

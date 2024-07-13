@@ -4,6 +4,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout-dialog',
@@ -14,12 +15,15 @@ import { UserService } from '../../../services/user.service';
 })
 export class LogoutDialogComponent {
 
-  constructor(private snackBar:MatSnackBar, private dialog:MatDialog, private userService:UserService){}
+  constructor(private snackBar:MatSnackBar, private dialog:MatDialog, private userService:UserService,
+    private router:Router
+  ){}
 
   logout() {
     this.userService.setToken(null);
     this.snackBar.open("Logout efetuado com sucesso",undefined,{duration:2000});
     this.dialog.closeAll();
+    this.router.navigateByUrl("/");
   }
 
 }

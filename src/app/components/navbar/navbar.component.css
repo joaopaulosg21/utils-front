@@ -1,22 +1,13 @@
 .spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
 
 .example-container {
-    width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    height: 100%;
-    position: relative;
-  }
-  
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  background-color: hsl(180, 7%, 29%);
+}
