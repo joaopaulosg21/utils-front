@@ -2,9 +2,15 @@
     width: 10%;
     height: 90vh;
     background-color: hsl(180, 7%, 29%);
-    position: absolute;
 }
 
 button {
     width: 100%;
+}
+
+@media (max-width:700px) {
+    .side-div {
+        width: 30%;
+    }
+    
 }

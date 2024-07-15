@@ -12,10 +12,19 @@
         }
 
     </mat-form-field>
-    <mat-hint>
-        <mat-selection-list class="list-container">
+    <mat-hint  class="list-container">
+        <mat-selection-list>
+            <p class="list-container-p">
+                <label>Name</label>
+                <label>Quantidade</label>
+            </p>
             @for (item of listControl.value?.items; track item.name) {
-            <mat-list-option>{{item.name}}</mat-list-option>
+            <mat-list-option>
+                <div class="list-item">
+                    <label>{{item.name}}</label>
+                    <label> {{item.quantity}}</label>
+                </div>
+            </mat-list-option>
             }
         </mat-selection-list>
     </mat-hint>
