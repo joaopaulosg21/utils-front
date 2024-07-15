@@ -1,7 +1,7 @@
 <app-navbar (showSideEvent)="showSide($event)"></app-navbar>
 
 @if(showSideEvent) {
-<div class="side-div">
+<div class="side-div" @slideInOut>
   <button mat-button [matMenuTriggerFor]="afterMenu"> Lista de compras</button>
 </div>
 
