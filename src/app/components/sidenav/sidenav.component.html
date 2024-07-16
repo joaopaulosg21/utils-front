@@ -7,9 +7,11 @@
 
 
 <mat-menu #afterMenu="matMenu" xPosition="before">
-  <button mat-menu-item>Registrar</button>
+  <a routerLink="/list/new">
+    <button mat-menu-item>Registrar</button>
+  </a>
   <a routerLink="/list/all">
-    <button mat-menu-item >Ver todas</button>
+    <button mat-menu-item>Ver todas</button>
   </a>
 </mat-menu>
 }
