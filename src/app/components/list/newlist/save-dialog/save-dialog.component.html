@@ -1,0 +1,13 @@
+<div class="container">
+    <h2 mat-dialog-title>Digite o nome da sua lista</h2>
+    <mat-dialog-content>
+        <mat-form-field class="form-field">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="nome da lista" required #listName/>
+        </mat-form-field>
+    </mat-dialog-content>
+</div>
+
+<mat-dialog-actions align="center">
+    <button mat-button cdkFocusInitial (click)="saveList(listName.value)">Salvar</button>
+</mat-dialog-actions>

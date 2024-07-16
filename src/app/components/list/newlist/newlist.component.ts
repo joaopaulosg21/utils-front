@@ -5,6 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { Item } from '../../../../types/Item';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { SaveDialogComponent } from './save-dialog/save-dialog.component';
 
 @Component({
   selector: 'app-newlist',
@@ -14,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './newlist.component.css'
 })
 export class NewlistComponent {
+
+  constructor(private dialog:MatDialog) {}
   items: Item[] = [];
 
   addItemToList(name: string, quantity: string) {
@@ -35,5 +39,9 @@ export class NewlistComponent {
 
   deleteItemFromList(itemName: string) {
     this.items = this.items.filter(i => i.name != itemName);
+  }
+
+  openSaveDialog() {
+    this.dialog.open(SaveDialogComponent,{data:this.items});
   }
 }
