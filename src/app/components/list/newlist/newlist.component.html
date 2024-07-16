@@ -1,1 +1,38 @@
-<p>newlist works!</p>
+<div class="container">
+    <div class="container-form">
+        <mat-form-field class="form-field">
+            <mat-label>Nome do produto</mat-label>
+            <input matInput placeholder="Nome" required #name />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Quantidade</mat-label>
+            <input matInput placeholder="10 unidades" required #quantity />
+        </mat-form-field>
+        <button mat-stroked-button (click)="addItemToList(name.value,quantity.value)">Adicionar</button>
+    </div>
+    <mat-list class="list-container">
+
+        <div class="list-container-label">
+            <label>Nome</label>
+            <label>Quantidade</label>
+            <label>Deletar</label>
+        </div>
+
+        @for (item of items; track item.name) {
+        <mat-list-item>
+
+            <div class="list-item">
+                <label class="list-item-label-name">{{item.name}}</label>
+                <label class="list-item-label-quantity"> {{item.quantity}}</label>
+                <label>
+                    <button mat-icon-button (click)="deleteItemFromList(item.name)">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </label>
+            </div>
+
+        </mat-list-item>
+
+        }
+    </mat-list>
+</div>
