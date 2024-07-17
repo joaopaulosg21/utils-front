@@ -28,6 +28,14 @@
     justify-content: space-around;
 }
 
+.list-item-label-name {
+    width: 80px;
+}
+
+.list-item-label-quantity {
+    width: 92px;
+}
+
 @media (max-width:500px) {
     .list-container {
         width: 100vw;

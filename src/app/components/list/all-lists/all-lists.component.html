@@ -15,14 +15,14 @@
     <mat-hint  class="list-container">
         <mat-selection-list>
             <p class="list-container-p">
-                <label>Nome</label>
-                <label>Quantidade</label>
+                <label class="list-item-label-name">Nome</label>
+                <label class="list-item-label-quantity">Quantidade</label>
             </p>
             @for (item of listControl.value?.items; track item.name) {
             <mat-list-option>
                 <div class="list-item">
-                    <label>{{item.name}}</label>
-                    <label> {{item.quantity}}</label>
+                    <label class="list-item-label-name">{{item.name}}</label>
+                    <label class="list-item-label-quantity"> {{item.quantity}}</label>
                 </div>
             </mat-list-option>
             }
