@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../../services/user.service';
 import { DialogModule } from '@angular/cdk/dialog';
+import { RegisterDialogComponent } from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-login-dialog',
@@ -17,6 +18,7 @@ import { DialogModule } from '@angular/cdk/dialog';
   styleUrl: './login-dialog.component.css'
 })
 export class LoginDialogComponent {
+
   userService = inject(UserService);
   snackBar = inject(MatSnackBar);
   dialog = inject(MatDialog);
@@ -32,11 +34,16 @@ export class LoginDialogComponent {
     response.subscribe((result: any) => {
       if (result.hasOwnProperty("token")) {
         this.userService.setToken(result.token);
-        this.snackBar.open("Login efetuado com sucesso",undefined,{duration:2000});
+        this.snackBar.open("Login efetuado com sucesso", undefined, { duration: 2000 });
         this.dialog.closeAll();
       } else {
         console.log(result);
       }
     })
+  }
+
+  register() {
+    this.dialog.closeAll();
+    this.dialog.open(RegisterDialogComponent);
   }
 }

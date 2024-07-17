@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { api } from '../../api';
+import { CreateUser } from '../../types/CreateUser';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,9 @@ export class UserService {
 
   getToken() {
     return this.tokenSubject.asObservable();
+  }
+
+  register(user:CreateUser) {
+    return this.http.post(api + "users",user);
   }
 }
