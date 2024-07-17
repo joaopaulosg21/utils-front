@@ -36,10 +36,17 @@ export class RegisterDialogComponent {
 
     const response = this.userService.register(user);
 
-    response.subscribe(data => {
-      this.snackBar.open("Registro efetuado com sucesso!", undefined, { duration: 2000 });
-      this.dialog.closeAll();
-      this.dialog.open(LoginDialogComponent);
-    })
+    response.subscribe(
+      {
+        next: data => {
+          this.snackBar.open("Registro efetuado com sucesso!", undefined, { duration: 2000 });
+          this.dialog.closeAll();
+          this.dialog.open(LoginDialogComponent);
+        },
+        error: (err) => {
+          throw new Error("Nenhum campo pode estar vazio!")
+        }
+      }
+    )
   }
 }

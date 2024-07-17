@@ -31,13 +31,16 @@ export class LoginDialogComponent {
 
   login(email: string, password: string) {
     const response = this.userService.login(email, password);
-    response.subscribe((result: any) => {
-      if (result.hasOwnProperty("token")) {
-        this.userService.setToken(result.token);
-        this.snackBar.open("Login efetuado com sucesso", undefined, { duration: 2000 });
-        this.dialog.closeAll();
-      } else {
-        console.log(result);
+    response.subscribe({
+      next: (result: any) => {
+        if (result.hasOwnProperty("token")) {
+          this.userService.setToken(result.token);
+          this.snackBar.open("Login efetuado com sucesso", undefined, { duration: 2000 });
+          this.dialog.closeAll();
+        }
+      },
+      error: (err) => {
+        throw new Error(err.error.error);
       }
     })
   }

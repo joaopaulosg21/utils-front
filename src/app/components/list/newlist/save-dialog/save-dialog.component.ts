@@ -29,8 +29,13 @@ export class SaveDialogComponent {
 
     this.userService.getToken().subscribe(token => {
       const response = this.listService.createList(newList, token);
-      response.subscribe(data => {
-        this.snackBar.open("Lista " + listName + " adicionada com sucesso", undefined, { duration: 2000 });
+      response.subscribe({
+        next: data => {
+          this.snackBar.open("Lista " + listName + " adicionada com sucesso", undefined, { duration: 2000 });
+        },
+        error: err => {
+          throw new Error("Nenhum campo pode estar vazio!")
+        }
       })
     })
 
